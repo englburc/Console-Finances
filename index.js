@@ -117,7 +117,7 @@ all numbers matched in solution
 
 
 // The total number of months included in the dataset:
-numItems = finances.length;
+let numItems = finances.length;
 console.log(`The total number of months included: ${numItems}`);
 
 // iterate through finances
@@ -128,14 +128,14 @@ for (let i = 0; i < finances.length; i++) {
 
 }
 
-console.log(`incomeDataArray: ${incomeDataArray}`);
+// console.log(`incomeDataArray: ${incomeDataArray}`);
 // The net total amount of Profit/Losses over the entire period.
-let oervallIncome = 0;
+let overallIncome = 0;
 for (let i = 0; i < incomeDataArray.length; i++) {
-    oervallIncome += incomeDataArray[i];
+    overallIncome += incomeDataArray[i];
 
 }
-console.log(`oervallIncome ${oervallIncome}`) //oervallIncome 38382578
+console.log(`overallIncome ${overallIncome}`) //overallIncome 38382578
 //number of months business ran
 let monthsOverChangesRun = numItems - 1;
 //sum of all changes
@@ -190,10 +190,24 @@ for (let i = 0; i < profitChanges.length; i++) {
         indexMinProfitChange = i
     }
 }
-console.log(`maxProfitChange: ${maxProfitChange}`)
+console.log(`minProfitChange: ${minProfitChange}`)
 //months are one index lower in comparison to profit data records
 let indexMonthMinProfitChange = indexMinProfitChange + 1;
-//get which month was max profit change
+//get which month was min profit change
 let monthMinProfitChange = finances[indexMinProfitChange + 1][0]
 console.log(`The decrease in profit was in ${monthMinProfitChange}`) // Sep-2013
 console.log(`and it was ${minProfitChange}`) // -2196167
+
+
+console.log(`Final results below as displayed in requirements are below:`)
+
+console.log(`Financial analysis:`)
+
+console.log(`The total number of months: ${numItems}`);             //86
+console.log(`overallIncome ${overallIncome}`)                       //overallIncome 38382578
+console.log(`averageChange: ${averageChange}`)                      //-2315.12
+console.log(`The maximum profit was in ${monthMaxProfitChange}`)    //$1926159
+console.log(`and it was ${maxProfitChange}`)                        //Feb-2012
+
+console.log(`The decrease in profit was in ${monthMinProfitChange}`) // Sep-2013
+console.log(`and it was ${minProfitChange}`)                         // -2196167
